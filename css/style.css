@@ -5,6 +5,9 @@
 @import url("./reset.css");
 @import url("./animation.css");
 
+.container{
+  background-color: silver;
+}
 
 /* 숨김 콘텐츠 */
 .a11y-hidden, legend{
@@ -128,8 +131,7 @@ a{
 .visual{
   height: 120px;
   position: relative;
- }
-
+}
 .visual::before, .visual::after{
   content: "";
   position: absolute;
@@ -139,46 +141,33 @@ a{
   left: 0;
   background-repeat: no-repeat;
   animation: bgAni 1000ms infinite alternate;
-
 }
 .visual::before{
   background-image: url("./images/ani_flower_01.png"), url("./images/ani_flower_02.png");
-  background-repeat: no-repeat;
   background-position: 0 -10px, 670px 5px;
 }
-
 .visual::after{
   background-image: url("./images/ani_flower_03.png"), url("./images/ani_flower_04.png");
-  background-repeat: no-repeat;
   background-position: 300px 10px, 800px 0;
   animation-delay: 500ms;
-
 }
-
-
 .visual-text{
   width: 500px;
-/*  background-color: yellow; */
   animation-name: textAni;
-  animation-duration: 2s;
+  animation-duration: 500ms;
   animation-fill-mode: forwards;
   font-family: Georgia, 'Times New Roman', Times, serif;
-  
 }
-
 /* 메인 콘텐츠 */
 .main{
   background-color: #fff;
-  border-radius: 5px;
+  border-radius: 15px 15px 0 0;
   padding: 30px;
   min-height: 400px;
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
   justify-content: space-between;
-}
-.group{
-  background-color: aqua;
 }
 .group1{
   width: 250px;
@@ -189,70 +178,132 @@ a{
 .group3{
   width: 190px;
 }
-
 /* 로그인 */
 .login{
-background-color: rgba(240,81,11,1);
-background-image:  radial-Gradient(circle at right top,rgba(240,128,61,1),rgba(240,81,11,1) );
-border-radius: 5px;
-padding: 10px;
-box-shadow: 5px 5px 0 0 #aaa;
-
+  background-color: rgba(240,81,11,1);
+  background-image: radial-gradient(circle at right top, rgba(240,128,16,1), rgba(240,81,11,1));
+  border-radius: 5px;
+  padding: 10px;
+  box-shadow: 5px 5px 0 0 #aaa;
 }
 .login-heading{
   font-size: 1.5rem;
   font-weight: 700;
-  color : #ff0;
-  margin-right: 10px;
-  margin-right: 10px;
- 
+  color: #ff0;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 .login-form, .sign{
   background-color: #fff;
-
 }
-
 .login-form{
   border-radius: 5px 5px 0 0;
   padding: 10px 10px 0 10px;
-
 }
-
-.login-form [type="userEmail"], .login-form [type="passPw"]{
+.login-form fieldset{
+  position: relative;
+  border-bottom: 1px solid #aaa;
+  padding-bottom: 10px;
+}
+.user-email{
+  margin-bottom: 5px;
+}
+.login-form [for="userEmail"], 
+.login-form [for="userPw"]{
   display: inline-block;
   width: 4em;
-
- }
-
-.login-form [type="email"], .login-form [type="password"]{
- width: 100px;
- height: 24px;
- border: 1px solid #aaa;
- padding : 1px 1px 1px 0.5em;
 }
-.btn-menu{
-  border: 1px sold rgba(240,128,16,1);
-  color: #ffff;
-  width: 50px;
-  height: 50px;
-  font-size:1.3em;
-  padding: 0;
+.login-form [type="email"], 
+.login-form [type="password"]{
+  width: 95px;
+  height: 24px;
+  border: 1px solid #aaa;
+  padding: 1px 1px 1px 0.5em;
   border-radius: 5px;
-  position: absolute;
-
-
 }
-
+.btn-login{
+  background: rgba(240,81,11,1);
+  border: 1px solid rgba(240,128,16,1);
+  color: #fff;
+  width: 50px;
+  height: 53px;
+  padding: 0;
+  font-size: 1.3rem;
+  border-radius: 8px;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
 .sign{
   border-radius: 0 0 5px 5px;
   padding: 10px;
   display: flex;
   justify-content: space-between;
 }
+
 .sign .icon-right-open::before{
   color: rgba(240,81,11,1);
 }
 
+.validation-list{
+ /* background-color: yellow; */
+  margin-top: 25px;
+ }
+  .validation-list a{
+    border-radius: 35px;
+    display: block;
+    margin-bottom: 10px;
+    padding: 8px 10px 8px 45px;
+    border: 1px solid #aaa;
+    background: url("./images/validation_icon.png") no-repeat 18px 50%,
+               linear-gradient(180deg, #ccc, #eee) repeat 0 0;
+}
+
+/*웹 관련 용어 */
+.term {
+  float;
+  margin-top: 20px;
+  border: 1px solid #aaa;
+  border-radius: 15px;
+  display: block;
+  margin-bottom: 15px;
+  padding: 15px;
+  background: linear-gradient(#ccc, #eee) repeat 0 0;
+}
+.term-heading {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+.term-list {
+  font-size: 1em; 
+  font-weight: 500;
+
+}
+.term-list-thumbnail{
+   vertical-align: initial;
+}
+
+.term-list-subject, .term-list-brief{
+  float: right;
+  width: 140px;
+  
+}
+.term-list-subject{
+  color: #296897;
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+.term-list-brief{
+  margin-top: -45px;
+} 
+
+.term-list::after{
+  content: "";
+  display: block;
+  clear: both;
+}
+}
 
 /* 슬로건 */
 .slogan{
